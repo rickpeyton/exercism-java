@@ -1,16 +1,17 @@
-import java.util.logging.Logger;
-
 public class PangramChecker {
 
     public boolean isPangram(String input) {
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        char[] alphabetArray = alphabet.toCharArray();
+        String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
+        char[] alphabetArray = ALPHABET.toCharArray();
         for (char ch : alphabetArray) {
-            if (input.toLowerCase().indexOf(ch) < 0) {
+            if (notInString(ch, input)) {
                 return false;
             }
         }
         return true;
     }
 
+    public boolean notInString(char ch, String input) {
+        return input.toLowerCase().indexOf(ch) < 0;
+    }
 }
