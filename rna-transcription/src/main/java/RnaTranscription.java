@@ -2,8 +2,8 @@ class RnaTranscription {
     String transcribe(String dnaStrand) {
         char[] dnaArray = dnaStrand.toCharArray();
         StringBuilder sb = new StringBuilder();
-        for (Character character : dnaArray) {
-           sb.append(transcribe(character));
+        for (char ch : dnaArray) {
+           sb.append(transcribe(ch));
         }
         return sb.toString();
     }
