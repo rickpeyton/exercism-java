@@ -15,7 +15,7 @@ public class Hamming {
         int distance = 0;
         for (int i = 0; i < leftStrandArr.length; i++) {
             if (leftStrandArr[i] != rightStrandArr[i]) {
-                distance += 1;
+                distance++;
             }
         }
         return distance;
