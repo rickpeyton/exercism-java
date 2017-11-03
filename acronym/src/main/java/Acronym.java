@@ -1,16 +1,18 @@
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 class Acronym {
-    private String[] phraseArray;
+    private static Pattern P = Pattern.compile(" |-");
+    private String phrase;
 
     Acronym(String phrase) {
-        phraseArray = phrase.toUpperCase().split(" |-");
+        this.phrase = phrase.toUpperCase();
     }
 
     String get() {
-        StringBuilder acronym = new StringBuilder();
-        for (String s : phraseArray) {
-            acronym.append(s.charAt(0));
-        }
-        return acronym.toString();
+        return P.splitAsStream(this.phrase)
+                .map(s -> s.substring(0, 1))
+                .collect(Collectors.joining());
     }
 
 }
