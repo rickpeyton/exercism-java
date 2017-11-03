@@ -14,7 +14,8 @@ class Gigasecond {
     }
 
     LocalDateTime getDate() {
-        return inputDateTime.plusSeconds(1000000000);
+        long GIGASECOND = 1_000_000_000;
+        return inputDateTime.plusSeconds(GIGASECOND);
     }
 
 }
