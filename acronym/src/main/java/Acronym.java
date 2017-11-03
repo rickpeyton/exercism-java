@@ -1,11 +1,16 @@
 class Acronym {
+    private String[] phraseArray;
 
     Acronym(String phrase) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        phraseArray = phrase.toUpperCase().split(" |-");
     }
 
     String get() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        StringBuilder acronym = new StringBuilder();
+        for (String s : phraseArray) {
+            acronym.append(s.charAt(0));
+        }
+        return acronym.toString();
     }
 
 }
